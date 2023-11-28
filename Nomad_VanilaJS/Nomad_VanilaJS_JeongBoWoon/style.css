@@ -1,0 +1,54 @@
+img{
+    position:absolute;
+    left: 0px;
+    top: 0px;
+    right:0px;
+    bottom:0px;
+    z-index: -1;
+    opacity:60%;
+}
+
+#loginForm{
+    position: absolute;
+    left: 45%;
+    top: 30%;
+}
+
+#greetingForm{
+    font-size: large;
+    position: absolute;
+    left: 45%;
+    top: 30%;
+}
+
+#clockForm{
+    position: absolute;
+    left: 48%;
+    top: 40%;
+}
+
+#todoInputForm{
+    position: absolute;
+    left: 46%;
+    top: 50%;
+    opacity: 80%;
+}
+
+#todos{
+    background-color: rgb(186, 189, 189);
+    opacity: 80%;
+    margin:auto;
+    position: absolute;
+    left: 46%;
+    top: 55%;
+    
+}
+
+#quoteForm{
+    background-color: azure;
+    font-size: large;
+    position: absolute;
+    left: 45%;
+    top: 90%;
+    font-style: italic;
+}
