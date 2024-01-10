@@ -5,15 +5,20 @@ import { useDiaryUpdate } from '../provider/Diary'
 import { localStorage } from '../utils'
 
 const updateStorageDiary = (diary: Diary[]) => localStorage.set(DIARY_STORAGE_KEY, diary)
+
 export const useStorageDiary = () => {
     const setDiary = useDiaryUpdate()
 
+    /*Usememo : 
+보통의 react 함수형 컴포넌트 : 랜더링 => 컴포넌트 함수 호출 => 모든 내부 변수 초기화의 순서를 거친다
+그런데 usememo를 쓰면 , 렌더링 => 컴포넌트 함수 호출 => memoize된 함수 재사용
+.*/
     const diaryActions = useMemo(
         () => ({
             remove: (removeId: string) => {
                 setDiary((prev) => {
                     const removedDiary = prev.filter(({ id }) => id !== removeId)
-                    updateStorageDiary(removedDiary)
+                    updateStorageDiary(removedDiary) // 일기 지우고 다시 localstroage에 저장
                     return removedDiary
                 })
             },
