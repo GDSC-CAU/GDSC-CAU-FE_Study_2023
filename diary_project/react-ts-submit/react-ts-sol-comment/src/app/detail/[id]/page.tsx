@@ -12,17 +12,20 @@ type DiaryDetailPageParams = {
 }
 
 export default function DiaryDetailPage() {
+    //현재 페이지의 param을 가져오기
     const { id } = useParams<DiaryDetailPageParams>()
 
+    //useContext써서 일기 값 불러옴
     const diary: Diary | undefined = useDiaryValue().find((diary) => diary.id === id)
     if (diary === undefined) throw Error(`Diary ${id} not found`)
 
+    //함수 내부에 navigate => navigation.navigate(component명, {보내고 싶은 데이터 : 내용})
     const navigate = useNavigate()
     const { remove, update } = useStorageDiary()
     const removeDiary = () => {
         remove(id!)
         navigate('/')
-    }
+    }//삭제하면 홈화면으로
 
     useEffect(() => {
         update(id!, { ...diary, views: diary.views + 1 })

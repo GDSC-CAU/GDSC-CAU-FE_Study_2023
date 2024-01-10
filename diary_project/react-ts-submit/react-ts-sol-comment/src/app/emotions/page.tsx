@@ -102,7 +102,7 @@ const emotionIcon = tw.rotary({
         },
     },
 })
-
+// props타입을 선언할 떄 : type || interface(확장 가능)
 interface EmotionLinkCardProps {
     emotion: Diary['emotion']
     emoji: string

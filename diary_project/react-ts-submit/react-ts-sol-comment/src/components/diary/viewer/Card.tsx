@@ -16,7 +16,7 @@ const icon = tw.style({
     borderWidth: 'border',
     borderColor: 'border-gray-100',
 })
-
+//대괄호로 객체를 접근 <key, type>
 const emotionsEmoji: Record<Diary['emotion'], string> = {
     awesome: '😎',
     great: '😃',
@@ -48,11 +48,13 @@ const diaryCard = tw
         gap: 'gap-1.5',
 
         padding: 'p-3',
+        //hover : 보통 사용자의 커서(마우스 포인터)가 요소 위에 올라가 있으면 선택됩니다.
+    
         ':hover': {
             backgroundColor: 'hover:bg-gray-50',
         },
-        transition: 'transition',
-        cursor: 'cursor-pointer',
+        transition: 'transition', //속도 조절 -> 부드럽게
+        cursor: 'cursor-pointer', // 마우스 커서가 올라갔을 때 보여줄 모양
     })
     .compose(util.container.style)
 
